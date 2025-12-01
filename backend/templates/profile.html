@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>My Profile</h2>
+
+<p><strong>Username:</strong> {{ current_user.username }}</p>
+<p><strong>Email:</strong> {{ current_user.email }}</p>
+
+<h3>Edit Biography</h3>
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.bio(cols=40, rows=5) }}<br><br>
+    {{ form.submit() }}
+</form>
+
+{% endblock %}
+
